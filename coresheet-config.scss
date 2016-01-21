@@ -1,0 +1,126 @@
+//
+// CoreSheet
+// A responsive Sass/CSS3 framework including a percentage-based grid system
+//
+
+// =====================================================
+// Configuration
+// =====================================================
+
+// -----------------------------------------------------
+// Theme
+// -----------------------------------------------------
+@import "themes/coresheet-theme-default.scss";
+
+// -----------------------------------------------------
+// Dimensions
+// -----------------------------------------------------
+$page-middle-width: 1220px;
+$page-breakpoint-fullwidth: 767px;
+
+// -----------------------------------------------------
+// Grid System
+// -----------------------------------------------------
+$grid-system-columns: 12;
+$grid-system-gutter: 4%;
+$grid-system-row-width-responsive: 94%;
+$grid-system-include-nesting: true;
+
+// -----------------------------------------------------
+// Typography
+// -----------------------------------------------------
+$page-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$page-font-size: 16px;
+$page-font: normal normal 500 #{$page-font-size}/1.45 $page-font-family;
+
+$headings-font-sizes: 38px, 32px, 26px, 20px, 16px, 12px;
+$headings-line-height: 1.1;
+$headings-font-weight: 500;
+$headings-margin-top: 24px;
+
+$paragraph-margin: 0 0 12px;
+
+$text-transform-classes: txt-tfm-upr uppercase, txt-tfm-lwr lowercase, txt-tfm-cpl capitalize;
+$text-align-classes: txt-aln-lft left, txt-aln-ctr center, txt-aln-rht right, txt-aln-jst justify;
+
+// -----------------------------------------------------
+// Horizontal Rulers
+// -----------------------------------------------------
+$horizontal-ruler-margin: 0;
+$horizontal-ruler-height: 1px;
+$horizontal-ruler-style: solid;
+
+// -----------------------------------------------------
+// Media
+// -----------------------------------------------------
+$images-enable-responsive-upscaling: false;
+
+// -----------------------------------------------------
+// Forms
+// -----------------------------------------------------
+$form-row-margin-bottom: 12px;
+$form-row-horizontal-label-margin-top: 8px;
+
+$label-margin-bottom: 3px;
+
+$input-text-font-size: 16px;
+$input-text-line-height: 1.2;
+$input-text-height: 38px;
+$input-text-padding: 8px 12px;
+
+$input-radio-customize: true;
+$input-radio-circle-size: 18px;
+$input-radio-margin: 1px 8px 4px 0;
+$input-radio-checked-inner-circle-top-left: 5px;
+$input-radio-checked-inner-circle-size: 10px;
+
+$input-checkbox-customize: true;
+$input-checkbox-square-size: 16px;
+$input-checkbox-margin: 2px 8px 4px 0;
+$input-checkbox-checkmark-top: 4px;
+$input-checkbox-checkmark-left: 6px;
+$input-checkbox-checkmark-width: 4px;
+$input-checkbox-checkmark-height: 8px;
+$input-checkbox-checkmark-thickness: 2px;
+
+// -----------------------------------------------------
+// Buttons
+// -----------------------------------------------------
+$button-font-size: $page-font-size;
+$button-line-height: 1.2;
+$button-padding: 8px 18px 7px 18px;
+$button-text-align-responsive: center;
+
+// -----------------------------------------------------
+// Tables
+// -----------------------------------------------------
+$table-background-colors: true;
+$table-odd-even-rows: true;
+$table-inner-borders: true;
+$table-outer-border: false;
+
+// -----------------------------------------------------
+// Navigation Menus
+// -----------------------------------------------------
+$navmenu-fixed-height: 0px;
+$navmenu-padding: 10px 18px;
+$navmenu-text-align: center;
+$navmenu-text-align-vertical: left;
+$navmenu-text-align-responsive: center;
+
+$navmenu-regular-item-margin: 3px;
+$navmenu-vertical-item-margin: 3px;
+$navmenu-one-size-width: 110px;
+$navmenu-vertical-width: 250px;
+$navmenu-divider-width: 1px;
+$navmenu-divider-margin: 8px;
+$navmenu-stretch-one-size: true;
+$navmenu-stretch-one-size-margin: 1%;
+$navmenu-stretch-one-size-count: 7;
+
+// -----------------------------------------------------
+// Sticky Footer
+// -----------------------------------------------------
+$footer-fullwidth: true;
+$footer-height: 320px;
+$footer-dock-height: 360px;

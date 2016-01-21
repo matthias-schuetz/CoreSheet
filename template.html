@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CoreSheet - Template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+		<link href="dist/coresheet.css" rel="stylesheet" type="text/css" media="screen">
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="middle">
+				<div class="row">
+					<div class="col12">
+						<h1>Components</h1>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> <strong>CoreSheet</strong> consists of a set of CSS declarations for default HTML elements. Additionally there are custom CSS classes which define advanced components like buttons or the grid system. This page represents a full HTML template that demonstrates all CSS components of <strong>CoreSheet</strong>. This template is also included in the <a href="https://github.com/matthias-schuetz/coresheet/">GitHub respository</a> of the framework.</p>
+						<h2>Overview</h2>
+						<ol class="clear">
+							<li>
+								<a href="#typography">Typography</a>
+							</li>
+							<li>
+								<a href="#media">Media</a>
+							</li>
+							<li>
+								<a href="#forms">Forms</a>
+							</li>
+							<li>
+								<a href="#navigation-menus">Navigation Menus</a>
+							</li>
+							<li>
+								<a href="#buttons">Buttons</a>
+							</li>
+							<li>
+								<a href="#tables">Tables</a>
+							</li>
+							<li>
+								<a href="#grid-system">Grid System</a>
+							</li>
+							<li>
+								<a href="#sticky-footer">Sticky Footer</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="typography">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#typography">Typography</a>
+						</h1>
+						<hr />
+					</div>
+					<div class="col6">
+						<h1>h1 Heading 38px</h1>
+						<h2>h2 Heading 32px</h2>
+						<h3>h3 Heading 26px</h3>
+						<h4>h4 Heading 20px</h4>
+						<h5>h5 Heading 16px</h5>
+						<h6>h6 Heading 12px</h6>
+					</div>
+					<div class="col6">
+						<h2>Copy</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> The body copy is wrapped in regular <code>&lt;p&gt;</code> tags. There is no need for certain classes. You can define the paragraph's <code>margin</code> in the <em>coresheet-config.scss</em> file.</p>
+						<p class="clr-epsilon">This is an unordered list:</p>
+						<ul>
+							<li>List item</li>
+							<li>List item</li>
+							<li>List item</li>
+						</ul>
+						<p class="clr-epsilon">Ordered and unordered lists are not styled by default in <strong>CoreSheet</strong>.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col6">
+						<h2>Text align</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> Common text adjustments can be performed by using atomic classes. The atomic text classes are optional and can be excluded from <strong>CoreSheet</strong> by setting a Sass variable. Below are examples for text align classes.</p>
+						<p class="txt-aln-lft">This text is aligned left. This text is aligned left. This text is aligned left. This text is aligned left. This text is aligned left. This text is aligned left. This text is aligned left. </p>
+						<p class="txt-aln-ctr">This text is aligned centered. This text is aligned centered. This text is aligned centered. This text is aligned centered. This text is aligned centered. This text is aligned centered. This text is aligned centered. </p>
+						<p class="txt-aln-rht">This text is aligned right. This text is aligned right. This text is aligned right. This text is aligned right. This text is aligned right. This text is aligned right. This text is aligned right. </p>
+						<p class="txt-aln-jst">This text is justified. This text is justified. This text is justified. This text is justified. This text is justified. This text is justified. This text is justified.  This text is justified.</p>
+					</div>
+					<div class="col6">
+						<h2>Text transform</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> There are also atomic classes for text transforms which look like the following.</p>
+						<p class="txt-tfm-upr">This text is uppercase.</p>
+						<p class="txt-tfm-lwr">This text is lowercase.</p>
+						<p class="txt-tfm-cpl">This text is capitalized.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="media">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#media">Media</a>
+						</h1>
+						<hr />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col6">
+						<h2>Images</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> Image elements behave as usual. If you use them with the grid system and the columns get scaled down because of the screen size, an image will be scaled to the column's width. By default, small images will not be upscaled to the column's width. So if the screen width is smaller than the full grid system width and an image is smaller than its parent column's width, its size won't change. If you want to scale them up for the responsive view, you can do this by adjusting a Sass variable.</p>
+					</div>
+					<div class="col6">
+						<h2>Audio / Video</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> Multimedia elements like <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> will be displayed in their original size (for audio there are the browser's default controls) and scaled to the viewport width if the screen size is smaller than the element's width. So multimedia elements act responsive by default.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col12">
+						<p>
+							<img src="data:image/png;base64,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" alt="" />
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col6">
+						<p>
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjIAAADwCAMAAAAtrX79AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRF////25lT/Lt46NrHso92IjB3WTQklNP/jG1Tungw5a9sajIiy7KKIiIpj0cit+r/m1Qjssvky5lcjs74/+avSmaL/+irIlOamlo0w6F4JjZohMHmuHlBIidSOoPEhqHFS4zKpGM0UygiMmyu5rl6W5rMekIp+M6OKCIiYabtS5PURozOpmEoUITBQykij0soh1s1IjyDJEuTRiIiVkQ2YikiKEuPKkR3IiIyIipEsHA3IiI9MSIi//i6OHCtMXm7czEiIiJHKGGmAAAAhT4iOU5geTEiIiIi0f//IkeP+P//0Y9H///45v/////RImyv///mR4/R//jOIihLr2wi///z//+vxIM5bCIiOCgi8///4fj/2///h8n/j9H/zvj////t7f//bK/mwYNL/9GP///g+OGsu///+M6bpNf4Zqz44P///+2kcCgi7fj/7aRgzo9L/86M//PKIig4//+0PiIiYCIibK//OF2H/69scK/mYE46YKTmyvP/S4PBbKzh+Kxm+O3QjMrz+O3iLjhExIM+pGAi//jXRnShQXm5cLTtMisi/+a5IiJLKFWbxPj/cDgoUJPOcLT/3PP/VnOPrGYi1/j/LigiImCkyoxQ/8mH+M6Tm+D/MGasSygi/92bxP//bK/4OF2Y16RmRDgu/+ak6PP/KEuDebnmKC44IjJZm8741f////PU//jh+MSDVnyh///V6Muyh0cibEZiKHC0stDtYqTXMmKkk0siufj/SyIi/9WT///br+b/w9ntweb///+7RkYy+K9s/+bB+Neksodd//PcbK/tKGyvg8T/h1Ar///O//jE5qRg5qxm1OjzqsPUIiguoXRG7bRwdKHDImas7eLU/+2yyOH4ZkEoMjIyMjpEr2wo7dCyw9zzKzI6RFZzh77h///JIiJg89SyOjIrIisy+O3ZbKzOfLThtHAoj7LQWmxm88qYKCgow6GG+OG0bCgiebv///ivK1CT3MOhdbn4pO3/jM7/w9TiMnC0OHi7ocPUocPcrIxHHyHEWwAAB2dJREFUeNrs22ecE0UYgPE96eLSUYonIiIBRERa6EXgxZgTjuPEOxtYUBFRQRAL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" alt="" />
+						</p>
+					</div>
+					<div class="col6">
+						<p>
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjIAAADwCAMAAAAtrX79AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRF////25lT/Lt46NrHso92IjB3WTQklNP/jG1Tungw5a9sajIiy7KKIiIpj0cit+r/m1Qjssvky5lcjs74/+avSmaL/+irIlOamlo0w6F4JjZohMHmuHlBIidSOoPEhqHFS4zKpGM0UygiMmyu5rl6W5rMekIp+M6OKCIiYabtS5PURozOpmEoUITBQykij0soh1s1IjyDJEuTRiIiVkQ2YikiKEuPKkR3IiIyIipEsHA3IiI9MSIi//i6OHCtMXm7czEiIiJHKGGmAAAAhT4iOU5geTEiIiIi0f//IkeP+P//0Y9H///45v/////RImyv///mR4/R//jOIihLr2wi///z//+vxIM5bCIiOCgi8///4fj/2///h8n/j9H/zvj////t7f//bK/mwYNL/9GP///g+OGsu///+M6bpNf4Zqz44P///+2kcCgi7fj/7aRgzo9L/86M//PKIig4//+0PiIiYCIibK//OF2H/69scK/mYE46YKTmyvP/S4PBbKzh+Kxm+O3QjMrz+O3iLjhExIM+pGAi//jXRnShQXm5cLTtMisi/+a5IiJLKFWbxPj/cDgoUJPOcLT/3PP/VnOPrGYi1/j/LigiImCkyoxQ/8mH+M6Tm+D/MGasSygi/92bxP//bK/4OF2Y16RmRDgu/+ak6PP/KEuDebnmKC44IjJZm8741f////PU//jh+MSDVnyh///V6Muyh0cibEZiKHC0stDtYqTXMmKkk0siufj/SyIi/9WT///br+b/w9ntweb///+7RkYy+K9s/+bB+Neksodd//PcbK/tKGyvg8T/h1Ar///O//jE5qRg5qxm1OjzqsPUIiguoXRG7bRwdKHDImas7eLU/+2yyOH4ZkEoMjIyMjpEr2wo7dCyw9zzKzI6RFZzh77h///JIiJg89SyOjIrIisy+O3ZbKzOfLThtHAoj7LQWmxm88qYKCgow6GG+OG0bCgiebv///ivK1CT3MOhdbn4pO3/jM7/w9TiMnC0OHi7ocPUocPcrIxHHyHEWwAAB2dJREFUeNrs22ecE0UYgPE96eLSUYonIiIBRERa6EXgxZgTjuPEOxtYUBFRQRAL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" alt="" />
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="forms">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#forms">Forms</a>
+						</h1>
+						<hr />
+					</div>
+					<div class="col12">
+						<h2>Regular</h2>
+					</div>
+					<div class="col4">
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> Forms are built up using common <code>input</code> elements. Radio options and checkboxes are fully customizable via CSS. Also the color of the placeholder texts inside the <code>input</code> fields has been normalized so it looks equal in all major browsers. The appearance of all form elements can be adjusted in the respective <strong>CoreSheet</strong> theme Sass file.</p>
+					</div>
+					<div class="col8">
+						<form>
+							<div class="form-row">
+								<label for="demo-input1">Name</label>
+								<input id="demo-input1" type="text" placeholder="Name" />
+							</div>
+							<div class="form-row">
+								<label for="demo-input2">E-Mail</label>
+								<input id="demo-input2" type="email" placeholder="E-Mail" required />
+							</div>
+							<div class="form-row">
+								<label for="demo-input3">Password</label>
+								<input id="demo-input3" type="password" placeholder="Password" />
+							</div>
+							<div class="form-row">
+								<label>Options</label>
+								<input id="demo-input4" type="radio" name="demo-radio1" value="1" checked />
+								<label for="demo-input4">Styled Radio Option 1</label>
+								<input id="demo-input5" type="radio" name="demo-radio1" value="2" />
+								<label for="demo-input5">Styled Radio Option 2</label>
+							</div>
+							<div class="form-row">
+								<input id="demo-input6" type="checkbox" name="demo-checkbox1" value="1" checked />
+								<label for="demo-input6">Styled Checkbox 1</label>
+								<input id="demo-input7" type="checkbox" name="demo-checkbox2" value="2" />
+								<label for="demo-input7">Styled Checkbox 2</label>
+							</div>
+							<div class="form-row">
+								<label>File Upload</label>
+								<div class="button file-upload">
+									<span>Browse...</span>
+									<input type="file" />
+								</div>
+							</div>
+							<div class="form-row">
+								<label>Textarea</label>
+								<textarea rows="4" placeholder="Multi-line text"></textarea>
+							</div>
+							<div class="form-row">
+								<input type="button" value="Submit" />
+								<input type="button" class="outline" value="Cancel" />
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col12">
+						<h2>Horizontal</h2>
+					</div>
+					<div class="col4">
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> This is an example for a horizontal form where labels are located left to the <code>input</code> elements. The horizontal form is implemented by using <em>nested</em> columns of the grid system of <strong>CoreSheet</strong>.</p>
+					</div>
+					<div class="col8 nested">
+						<form class="form-rows-horizontal">
+							<div class="form-row">
+								<label class="col2" for="demo-input8">Name</label>
+								<div class="col6">
+									<input id="demo-input8" type="text" placeholder="Name" />
+								</div>
+							</div>
+							<div class="form-row">
+								<label class="col2" for="demo-input9">E-Mail</label>
+								<div class="col6">
+									<input id="demo-input9" type="email" placeholder="E-Mail" />
+								</div>
+							</div>
+							<div class="form-row">
+								<label class="col2" for="demo-input10">Password</label>
+								<div class="col6">
+									<input id="demo-input10" type="password" placeholder="Password" />
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col6 push2">
+									<input type="button" value="Submit" />
+									<input type="button" class="outline" value="Cancel" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="navigation-menus">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#navigation-menus">Navigation Menus</a>
+						</h1>
+						<hr />
+					</div>
+					<div class="col12">
+						<h2>Multiple flavors</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> The navigation menus are simple unordered lists that contain anchor links. The main class <code>navmenu</code> can be used alone or in combination with other classes as shown below. Thre's one addition: the CSS classes for the <em>Stretch / One size</em> combination are generated through calculations by Sass (percentage values plus a definable margin). The default value for the maximum amount of those menu items is set to 7. So if a navigation menu of this kind contains 3 list items, it has to get the class <code>stretch-one-size-3</code>. If it contains 5 list items, it requires <code>stretch-one-size-5</code> and so on. Items of such a menu will always be stretched to the full width of their parent container.</p>
+					</div>
+					<div class="col6">
+						<h2>Regular</h2>
+						<ul class="navmenu">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+					<div class="col6">
+						<h2>One size</h2>
+						<ul class="navmenu one-size">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6">
+						<h2>Align right</h2>
+						<ul class="navmenu align-right">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+					<div class="col6">
+						<h2>Align right / One size</h2>
+						<ul class="navmenu one-size align-right">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6">
+						<h2>Stretch</h2>
+						<ul class="navmenu stretch">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+					<div class="col6">
+						<h2>Stretch / One size</h2>
+						<ul class="navmenu stretch-one-size-3">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6">
+						<h2>Dividers</h2>
+						<ul class="navmenu dividers">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+					<div class="col6">
+						<h2>Dividers / Clear</h2>
+						<ul class="navmenu dividers clear">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6">
+						<h2>Vertical</h2>
+						<ul class="navmenu vertical">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+					<div class="col6">
+						<h2>Vertical / Stretch</h2>
+						<ul class="navmenu vertical stretch">
+							<li><a href="#" class="active">First</a></li>
+							<li><a href="#">Second</a></li>
+							<li><a href="#">Last</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="buttons">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#buttons">Buttons</a>
+						</h1>
+						<hr />
+					</div>
+					<div class="col6">
+						<h2>Default style</h2>
+						<a href="#" class="button">&lt;a&gt;</a>
+						<input type="button" value="&lt;input&gt;" />
+						<button>&lt;button&gt;</button>
+					</div>
+					<div class="col6">
+						<h2>Outline style</h2>
+						<a href="#" class="button outline">&lt;a&gt;</a>
+						<input type="button" class="outline" value="&lt;input&gt;" />
+						<button class="outline">&lt;button&gt;</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="tables">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#tables">Tables</a>
+						</h1>
+						<hr />
+					</div>
+					<div class="col12">
+						<h2>Configurable colors and borders</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Item</th>
+									<th>Column 1</th>
+									<th>Column 2</th>
+									<th>Column 3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td>Row 1</td>
+									<td>Row 1</td>
+									<td>Row 1</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td>Row 2</td>
+									<td>Row 2</td>
+									<td>Row 2</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td>Row 3</td>
+									<td>Row 3</td>
+									<td>Row 3</td>
+								</tr>
+								<tr>
+									<th>4</th>
+									<td>Row 4</td>
+									<td>Row 4</td>
+									<td>Row 4</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="middle" id="grid-system">
+				<div class="row">
+					<div class="col12">
+						<h1>
+							<a href="#grid-system">Grid System</a>
+						</h1>
+						<hr />
+					</div>
+					<div class="col12">
+						<h2>Customizable columns</h2>
+						<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> The grid system of <strong>CoreSheet</strong> is fully configurable: you can define the number of columns, the gutter width and a row width for the responsive view. The width of the grid system underlies the Sass setting for your whole page layout so columns and gutters are calculated through percentages.</p>
+						<p class="clr-epsilon">The grid system comes with helper classes so you can extend and push columns to the right. There are <em>push</em> classes (e.g. <code>push1</code>) that move a column to the right for the width of the desired columns plus their gutters. Additionally there two more classes for a more granular control, so you can use <code>push1-reduced</code> (width of columns minus twice one gutter width) and <code>push1-half-reduced</code> (width of columns minus one gutter width).</p>
+						<p class="clr-epsilon">Furthermore you can remove the gutter on both sides (<code>nil-left</code> and <code>nil-right</code>). And there's even support for nesting down to one level. So you can have columns inside a column (requires the <code>nested</code> class). Below you will find some examples for the grid system column classes.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col12">
+						<h2>12 Columns Grid</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+					<div class="col1 bgd-alpha">
+						<p>.col1</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col3 bgd-gamma">
+						<p>.col3</p>
+					</div>
+					<div class="col3 bgd-gamma">
+						<p>.col3</p>
+					</div>
+					<div class="col3 bgd-gamma">
+						<p>.col3</p>
+					</div>
+					<div class="col3 bgd-gamma">
+						<p>.col3</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 bgd-delta">
+						<p>.col4</p>
+					</div>
+					<div class="col4 bgd-delta">
+						<p>.col4</p>
+					</div>
+					<div class="col4 bgd-delta">
+						<p>.col4</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col5 bgd-alpha">
+						<p>.col5</p>
+					</div>
+					<div class="col7 bgd-alpha">
+						<p>.col7</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6 bgd-beta">
+						<p>.col6</p>
+					</div>
+					<div class="col6 bgd-beta">
+						<p>.col6</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col7 bgd-gamma">
+						<p>.col7</p>
+					</div>
+					<div class="col5 bgd-gamma">
+						<p>.col5</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col8 bgd-delta">
+						<p>.col8</p>
+					</div>
+					<div class="col4 bgd-delta">
+						<p>.col4</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col9 bgd-alpha">
+						<p>.col9</p>
+					</div>
+					<div class="col3 bgd-alpha">
+						<p>.col3</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col10 bgd-beta">
+						<p>.col10</p>
+					</div>
+					<div class="col2 bgd-beta">
+						<p>.col2</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col11 bgd-gamma">
+						<p>.col11</p>
+					</div>
+					<div class="col1 bgd-gamma">
+						<p>.col1</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col12 bgd-delta">
+						<p>.col12</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col12">
+						<h2>Extends</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col5 extend nil-right bgd-alpha">
+						<p>.col5 .extend .nil-right</p>
+					</div>
+					<div class="col7 nil-left bgd-beta">
+						<p>.col7 .nil-left</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 extend nil-right bgd-gamma">
+						<p>.col4 .extend .nil-right</p>
+					</div>
+					<div class="col8 nil-left bgd-delta">
+						<p>.col8 .nil-left</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col3 nil-right bgd-alpha">
+						<p>.col3 .nil-right</p>
+					</div>
+					<div class="col9 extend nil-left bgd-beta">
+						<p>.col9 .extend .nil-left</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col2 nil-right bgd-gamma">
+						<p>.col2 .nil-right</p>
+					</div>
+					<div class="col10 extend nil-left bgd-delta">
+						<p>.col10 .extend .nil-left</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col12">
+						<h2>Pushes</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 push2 bgd-alpha">
+						<p>.col4 .push2</p>
+					</div>
+					<div class="col4 bgd-alpha">
+						<p>.col4</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col8 push4 bgd-beta">
+						<p>.col8 .push4</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6 push6 bgd-gamma">
+						<p>.col6 .push6</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 push2 bgd-delta">
+						<p>.col4 .push2</p>
+					</div>
+					<div class="col4 push2 bgd-delta">
+						<p>.col4 .push2</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 push2-half-reduced bgd-alpha">
+						<p>.col4 .push2-half-reduced</p>
+					</div>
+					<div class="col4 push2 bgd-alpha">
+						<p>.col4 .push2</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 push2-reduced bgd-alpha">
+						<p>.col4 .push2-reduced</p>
+					</div>
+					<div class="col4 push2 bgd-alpha">
+						<p>.col4 .push2</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col12">
+						<h2>Nesting (1 level)</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col8 nested bgd-alpha">
+						<div class="col8">
+							<p>.col8 .nested > .col8</p>
+						</div>
+						<div>
+							<div class="col4 bgd-beta">
+								<p>.col4</p>
+							</div>
+							<div class="col4 bgd-beta">
+								<p>.col4</p>
+							</div>
+						</div>
+					</div>
+					<div class="col4 nested bgd-alpha">
+						<div class="col4">
+							<p>.col4 .nested > .col4</p>
+						</div>
+						<div>
+							<div class="col2 bgd-beta">
+								<p>.col2</p>
+							</div>
+							<div class="col2 bgd-beta">
+								<p>.col2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col6 nested bgd-gamma">
+						<div class="col6">
+							<p>.col6 .nested > .col6</p>
+						</div>
+						<div>
+							<div class="col3 bgd-delta">
+								<p>.col3</p>
+							</div>
+							<div class="col3 bgd-delta">
+								<p>.col3</p>
+							</div>
+						</div>
+					</div>
+					<div class="col6 nested bgd-gamma">
+						<div class="col6">
+							<p>.col6 .nested > .col6</p>
+						</div>
+						<div>
+							<div class="col3 bgd-delta">
+								<p>.col3</p>
+							</div>
+							<div class="col3 bgd-delta">
+								<p>.col3</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col4 nested bgd-alpha">
+						<div class="col4">
+							<p>.col4 .nested > .col4</p>
+						</div>
+						<div>
+							<div class="col2 bgd-beta">
+								<p>.col2</p>
+							</div>
+							<div class="col1 bgd-beta">
+								<p>.col1</p>
+							</div>
+							<div class="col1 bgd-beta">
+								<p>.col1</p>
+							</div>
+						</div>
+					</div>
+					<div class="col6 nested push2 bgd-alpha">
+						<div class="col6">
+							<p>.col6 .nested > .col6 .push2</p>
+						</div>
+						<div>
+							<div class="col2 bgd-beta">
+								<p>.col2</p>
+							</div>
+							<div class="col2 bgd-beta">
+								<p>.col2</p>
+							</div>
+							<div class="col2 bgd-beta">
+								<p>.col2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-dock"></div>
+
+			<div class="footer bgd-alpha" id="sticky-footer">
+				<div class="middle">
+					<div class="row">
+						<div class="col12">
+							<h1>
+								<a href="#sticky-footer">Sticky Footer</a>
+							</h1>
+						</div>
+						<div class="col12">
+							<p class="clr-epsilon"><strong class="clr-zeta">&mdash;</strong> A sticky footer always remains at the bottom of the entire page. If there is too few content to fill the browser window's height, the footer will stick to the bottom. If there is enough content so that a scrollbar is needed, the sticky footer gets pushed to the very bottom.</p>
+							<p class="clr-epsilon">The footer is positioned <code>absolute</code> so it has a fixed height. If your footer content breaks on smaller screens (above main breakpoint), the height of the footer should not be exceeded. Therefore you should set the footer height at the end of your development and ensure that it's enough also for screens above 767px.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

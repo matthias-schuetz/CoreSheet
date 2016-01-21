@@ -1,0 +1,107 @@
+//
+// CoreSheet - Theme
+// A responsive Sass/CSS3 framework including a percentage-based grid system
+//
+// Theme Preview: http://coresheet.net/themes/red.html
+//
+
+// =====================================================
+// Theme: Red
+// =====================================================
+
+// -----------------------------------------------------
+// Colors
+// -----------------------------------------------------
+$page-background-color: #ffffff;
+$page-font-color: #222222;
+$page-brand-color-alpha: #ebebeb;
+$page-brand-color-beta: #d6d6d6;
+$page-brand-color-gamma: #c2c2c2;
+$page-brand-color-delta: #adadad;
+$page-brand-color-epsilon: #898989;
+$page-brand-color-zeta: #e72600;
+$page-brand-color-classes: alpha $page-brand-color-alpha, beta $page-brand-color-beta, gamma $page-brand-color-gamma, delta $page-brand-color-delta, epsilon $page-brand-color-epsilon, zeta $page-brand-color-zeta;
+
+// -----------------------------------------------------
+// Typography
+// -----------------------------------------------------
+$links-text-color: $page-brand-color-zeta;
+$links-text-color-hover: darken($page-brand-color-zeta, 15%);
+$links-transition: color 0.15s;
+
+// -----------------------------------------------------
+// Horizontal Rulers
+// -----------------------------------------------------
+$horizontal-ruler-color: $page-brand-color-beta;
+
+// -----------------------------------------------------
+// Forms
+// -----------------------------------------------------
+$form-global-text-color: $page-font-color;
+
+$input-text-background: #ffffff;
+$input-text-background-focus: lighten($page-brand-color-alpha, 6%);
+$input-text-border: 1px $page-brand-color-gamma solid;
+$input-text-border-focus: 1px $page-brand-color-zeta solid;
+$input-text-border-radius: 3px;
+$input-text-box-shadow: none;
+$input-text-box-shadow-focus: none;
+$input-text-color-placeholder: lighten($page-font-color, 25%);
+$input-text-transition: background 0.2s, border 0.2s;
+
+$input-radio-border: 1px $page-brand-color-delta solid;
+$input-radio-border-focus: 1px $page-brand-color-zeta solid;
+$input-radio-background: #ffffff;
+$input-radio-background-focus: lighten($page-brand-color-zeta, 52%);
+$input-radio-checked-inner-circle-background: lighten($page-font-color, 15%);
+
+$input-checkbox-border: 1px $page-brand-color-delta solid;
+$input-checkbox-border-focus: $input-radio-border-focus;
+$input-checkbox-background: #ffffff;
+$input-checkbox-background-focus: $input-radio-background-focus;
+$input-checkbox-checkmark-color: lighten($page-font-color, 15%);
+
+// -----------------------------------------------------
+// Buttons
+// -----------------------------------------------------
+$button-background: $page-brand-color-zeta;
+$button-background-hover: darken($page-brand-color-zeta, 10%);
+$button-text-color: #ffffff;
+$button-text-color-hover: #ffffff;
+$button-border: 1px $page-brand-color-zeta solid;
+$button-border-hover: 1px darken($page-brand-color-zeta, 10%) solid;
+$button-border-radius: $input-text-border-radius;
+$button-transition: background-color 0.2s, border 0.2s, color 0.2s;
+
+$button-outline-background: #ffffff;
+$button-outline-background-hover: $page-brand-color-beta;
+$button-outline-text-color: $page-font-color;
+$button-outline-text-color-hover: $page-font-color;
+$button-outline-border: 1px $page-brand-color-gamma solid;
+$button-outline-border-hover: $button-outline-border;
+
+// -----------------------------------------------------
+// Tables
+// -----------------------------------------------------
+$table-thead-background: $page-brand-color-beta;
+$table-row-background: #ffffff;
+$table-row-even-background: $page-brand-color-alpha;
+$table-border: 1px $page-brand-color-gamma solid;
+
+// -----------------------------------------------------
+// Navigation Menus
+// -----------------------------------------------------
+$navmenu-background: $page-brand-color-alpha;
+$navmenu-background-hover: $page-brand-color-beta;
+$navmenu-background-active: darken($page-brand-color-delta, 30%);
+$navmenu-text-color: $page-font-color;
+$navmenu-text-color-hover: $page-font-color;
+$navmenu-text-color-active: #ffffff;
+$navmenu-border: 1px $page-brand-color-gamma solid;
+$navmenu-border-hover: 1px $page-brand-color-delta solid;
+$navmenu-border-active: 1px darken($page-brand-color-delta, 40%) solid;
+$navmenu-border-radius: $input-text-border-radius;
+$navmenu-transition: $button-transition;
+
+$navmenu-divider-background: $page-brand-color-beta;
+$navmenu-clear-border: 1px transparent solid;

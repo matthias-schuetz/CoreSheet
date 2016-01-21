@@ -1,0 +1,1019 @@
+/*
+ * CoreSheet v1.0
+ * A responsive Sass/CSS3 framework including a percentage-based grid system
+ * http://coresheet.net
+ *
+ * Copyright (C) Matthias Schuetz
+ * Free to use under the MIT license
+ */
+
+// =====================================================
+// Configuration
+// =====================================================
+@import "coresheet-config";
+
+// =====================================================
+// Mixins
+// =====================================================
+
+// -----------------------------------------------------
+// Helpers
+// -----------------------------------------------------
+@mixin vendor($prop, $value) {
+	-webkit-#{$prop}: $value;
+	-moz-#{$prop}: $value;
+	-ms-#{$prop}: $value;
+	-o-#{$prop}: $value;
+	#{$prop}: $value;
+}
+
+// -----------------------------------------------------
+// Page Brand Color Classes
+// -----------------------------------------------------
+@mixin page-brand-color-classes() {
+	@each $color in $page-brand-color-classes {
+		.bgd-#{nth($color, 1)} {
+			background: nth($color, 2);
+		}
+
+		.clr-#{nth($color, 1)} {
+			color: nth($color, 2);
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Text Adjustment Classes
+// -----------------------------------------------------
+@mixin text-adjustment-classes() {
+	@each $transform in $text-transform-classes {
+		.#{nth($transform, 1)} {
+			text-transform: nth($transform, 2);
+		}
+	}
+
+	@each $align in $text-align-classes {
+		.#{nth($align, 1)} {
+			text-align: nth($align, 2);
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Headings
+// -----------------------------------------------------
+@mixin headings() {
+	@each $font-size in $headings-font-sizes {
+		h#{index($headings-font-sizes, $font-size)} {
+			font-size: $font-size;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: $headings-margin-top;
+		margin-bottom: $headings-margin-top / 2;
+		font-weight: $headings-font-weight;
+		line-height: $headings-line-height;
+	}
+}
+
+// -----------------------------------------------------
+// Forms
+// -----------------------------------------------------
+@mixin forms() {
+	.form-rows-horizontal {
+		margin-top: -$form-row-horizontal-label-margin-top;
+
+		label {
+			margin-top: $form-row-horizontal-label-margin-top;
+		}
+	}
+
+	.form-row {
+		margin-bottom: $form-row-margin-bottom;
+	}
+
+	label {
+		max-width: 100%;
+		margin-bottom: $label-margin-bottom;
+		display: inline-block;
+		float: left;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="search"],
+	textarea {
+		width: 100%;
+		height: $input-text-height;
+		padding: $input-text-padding;
+		background: $input-text-background;
+		color: $form-global-text-color;
+		border: $input-text-border;
+		border-radius: $input-text-border-radius;
+		font-family: $page-font-family;
+		font-size: $input-text-font-size;
+		line-height: $input-text-line-height;
+		@include vendor(transition, $input-text-transition);
+		@include vendor(box-shadow, $input-text-box-shadow);
+		display: block;
+		float: left;
+		outline: none;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+
+		&:focus {
+			background: $input-text-background-focus;
+			border: $input-text-border-focus;
+			@include vendor(box-shadow, $input-text-box-shadow-focus);
+		}
+	}
+
+	input[type="file"] {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 120px;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	textarea {
+		height: auto;
+		font-family: $page-font-family;
+		font-size: $input-text-font-size;
+		resize: none;
+		overflow: auto;
+	}
+
+	input::-moz-placeholder,
+	textarea::-moz-placeholder {
+		color: $input-text-color-placeholder;
+	}
+
+	input:-moz-placeholder,
+	textarea:-moz-placeholder {
+		color: $page-font-color;
+	}
+
+	input::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder {
+		color: rgba($input-text-color-placeholder, 0.58%);
+	}
+
+	input[type="text"]:-ms-input-placeholder,
+	input[type="password"]:-ms-input-placeholder,
+	input[type="email"]:-ms-input-placeholder,
+	input[type="search"]:-ms-input-placeholder,
+	textarea:-ms-input-placeholder {
+		color: rgba($input-text-color-placeholder, 0.55%);
+	}
+
+	@if $input-radio-customize {
+		input[type="radio"] {
+			position: absolute;
+			opacity: 0;
+
+			& + label {
+				position: relative;
+				color: $form-global-text-color;
+				float: left;
+				clear: both;
+
+				&:before {
+					width: $input-radio-circle-size;
+					height: $input-radio-circle-size;
+					border-radius: 50%;
+					margin: $input-radio-margin;
+					border: $input-radio-border;
+					background: $input-radio-background;
+					float: left;
+					display: block;
+					content: " ";
+				}
+			}
+
+			&:checked {
+				& + label {
+					&:after {
+						position: absolute;
+						top: $input-radio-checked-inner-circle-top-left + nth($input-radio-margin, 1);
+						left: $input-radio-checked-inner-circle-top-left;
+						width: $input-radio-checked-inner-circle-size;
+						height: $input-radio-checked-inner-circle-size;
+						background: $input-radio-checked-inner-circle-background;
+						border-radius: 50%;
+						display: block;
+						content: " ";
+					}
+				}
+			}
+
+			&:focus {
+				& + label {
+					&:before {
+						border: $input-radio-border-focus;
+						background: $input-radio-background-focus;
+					}
+				}
+			}
+		}
+	}
+
+	@if $input-checkbox-customize {
+		input[type="checkbox"] {
+			position: absolute;
+			opacity: 0;
+
+			& + label {
+				position: relative;
+				color: $form-global-text-color;
+				float: left;
+				clear: both;
+
+				&:before {
+					position: relative;
+					width: $input-checkbox-square-size;
+					height: $input-checkbox-square-size;
+					margin: $input-checkbox-margin;
+					border: $input-checkbox-border;
+					background: $input-checkbox-background;
+					float: left;
+					display: block;
+					content: " ";
+				}
+			}
+
+			&:checked {
+				& + label {
+					&:after {
+						position: absolute;
+						top: $input-checkbox-checkmark-top;
+						left: $input-checkbox-checkmark-left;
+						width: $input-checkbox-checkmark-width;
+						height: $input-checkbox-checkmark-height;
+						border-width: 0 $input-checkbox-checkmark-thickness $input-checkbox-checkmark-thickness 0;
+						border-style: solid;
+						border-color: $input-checkbox-checkmark-color;
+						@include vendor(transform, rotate(45deg));
+						content: " ";
+						display: block;
+					}
+				}
+			}
+
+			&:focus {
+				& + label {
+					&:before {
+						border: $input-checkbox-border-focus;
+						background: $input-checkbox-background-focus;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: $page-breakpoint-fullwidth) {
+		.form-rows-horizontal {
+			margin-top: 0;
+
+			label {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Navigation Menus
+// -----------------------------------------------------
+@mixin navigation-menus() {
+	.navmenu {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		& > li {
+			position: relative;
+			display: table;
+			float: left;
+
+			&:not(:last-child) {
+				margin-right: $navmenu-regular-item-margin;
+			}
+
+			& > a {
+				font-size: $page-font-size;
+				text-align: $navmenu-text-align;
+				padding: $navmenu-padding;
+				background: $navmenu-background;
+				color: $navmenu-text-color;
+				border: $navmenu-border;
+				border-radius: $navmenu-border-radius;
+				@include vendor(transition, $navmenu-transition);
+				display: block;
+				box-sizing: border-box;
+
+				&:hover {
+					background: $navmenu-background-hover;
+					color: $navmenu-text-color-hover;
+					border: $navmenu-border-hover;
+				}
+
+				&.active {
+					background: $navmenu-background-active;
+					color: $navmenu-text-color-active;
+					border: $navmenu-border-active;
+				}
+
+				&:active {
+					color: $navmenu-text-color;
+				}
+
+				@if $navmenu-fixed-height > 0px {
+					height: $navmenu-fixed-height;
+					line-height: $navmenu-fixed-height;
+				}
+			}
+		}
+
+		&.one-size {
+			& > li {
+				width: $navmenu-one-size-width;
+			}
+		}
+
+		&.dividers {
+			& > li:not(:last-child) {
+				margin-right: ($navmenu-divider-margin * 2) + $navmenu-divider-width;
+
+				&:after {
+					position: absolute;
+					top: 0;
+					right: -($navmenu-divider-margin + $navmenu-divider-width);
+					width: $navmenu-divider-width;
+					height: 100%;
+					background: $navmenu-divider-background;
+					display: block;
+					content: " ";
+				}
+			}
+		}
+
+		&.clear {
+			& > li {
+				& > a:not(.active):not(:hover) {
+					background: transparent;
+					border: $navmenu-clear-border;
+				}
+			}
+		}
+
+		&.stretch {
+			width: 100%;
+			display: table;
+
+			& > li {
+				display: table-cell;
+				float: none;
+			}
+		}
+
+		&.vertical {
+			& > li {
+				width: $navmenu-vertical-width;
+				margin-right: 0;
+				clear: both;
+
+				&:not(:last-child) {
+					margin-bottom: $navmenu-vertical-item-margin;
+				}
+
+				& > a {
+					text-align: $navmenu-text-align-vertical;
+				}
+			}
+
+			&.stretch {
+				& > li {
+					width: auto;
+					display: block;
+				}
+			}
+		}
+
+		&.align-right {
+			font-size: 0;
+			text-align: right;
+
+			& > li {
+				display: inline-block;
+				float: none;
+			}
+		}
+
+		@if $navmenu-stretch-one-size {
+			@for $i from 2 through $navmenu-stretch-one-size-count {
+				&.stretch-one-size-#{$i} {
+					& > li {
+						width: ((100% - $navmenu-stretch-one-size-margin * ($i - 1)) / $i);
+						margin-right: $navmenu-stretch-one-size-margin;
+					}
+				}
+			}
+
+			%navmenu-props-stretch-one-size-last-child {
+				margin-right: 0;
+			}
+
+			@for $i from 2 through $navmenu-stretch-one-size-count {
+				&.stretch-one-size-#{$i} {
+					& > li {
+						&:last-child {
+							@extend %navmenu-props-stretch-one-size-last-child;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: $page-breakpoint-fullwidth) {
+		%menu-item-props-responsive {
+			width: 100%;
+			margin-right: 0;
+			display: block;
+			float: left;
+			clear: both;
+		}
+
+		.navmenu {
+			& > li,
+			&.one-size > li,
+			&.stretch > li,
+			&.vertical > li,
+			&.vertical.stretch > li {
+				@extend %menu-item-props-responsive;
+
+				& > a {
+					text-align: $navmenu-text-align-responsive;
+				}
+			}
+
+			&.dividers {
+				& > li:not(:last-child) {
+					&:after {
+						display: none;
+					}
+				}
+			}
+
+			@if $navmenu-stretch-one-size {
+				@for $i from 2 through $navmenu-stretch-one-size-count {
+					&.stretch-one-size-#{$i} {
+						& > li {
+							@extend %menu-item-props-responsive;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Buttons
+// -----------------------------------------------------
+@mixin buttons() {
+	button,
+	input[type="button"],
+	input[type="submit"],
+	.button {
+		margin: 0;
+		padding: $button-padding;
+		background: $button-background;
+		color: $button-text-color;
+		border: $button-border;
+		border-radius: $button-border-radius;
+		font-family: $page-font-family;
+		font-size: $button-font-size;
+		line-height: $button-line-height;
+		word-wrap: break-word;
+		@include vendor(transition, $button-transition);
+		display: inline-block;
+		vertical-align: top;
+		cursor: pointer;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+
+		&:hover {
+			background: $button-background-hover;
+			color: $button-text-color-hover;
+			border: $button-border-hover;
+		}
+
+		&.outline {
+			background: $button-outline-background;
+			color: $button-outline-text-color;
+			border: $button-outline-border;
+
+			&:hover {
+				background: $button-outline-background-hover;
+				color: $button-outline-text-color-hover;
+				border: $button-outline-border-hover;
+			}
+		}
+
+		&.file-upload {
+			position: relative;
+			overflow: hidden;
+			float: left;
+			clear: both;
+		}
+	}
+
+	input[type="button"]::-moz-focus-inner,
+	input[type="submit"]::-moz-focus-inner,
+	button::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+
+	@media only screen and (max-width: $page-breakpoint-fullwidth) {
+		button,
+		input[type="button"],
+		input[type="submit"],
+		.button {
+			width: 100%;
+			text-align: $button-text-align-responsive;
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Tables
+// -----------------------------------------------------
+@mixin tables() {
+	table {
+		width: 100%;
+		max-width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+
+		@if $table-outer-border {
+			border: $table-border;
+		}
+
+		thead {
+			tr {
+				th {
+					@if $table-background-colors {
+						background: $table-thead-background;
+					}
+
+					@if ($table-inner-borders) {
+						&:not(:first-child) {
+							border-left: $table-border;
+						}
+					}
+				}
+			}
+		}
+
+		th {
+			text-align: left;
+		}
+
+		th,
+		td {
+			padding: 10px;
+
+			@if $table-background-colors {
+				background: $table-row-background;
+			}
+
+			@if ($table-inner-borders) {
+				border-bottom: $table-border;
+			}
+		}
+
+		tr {
+			@if $table-background-colors and $table-odd-even-rows {
+				&:nth-child(2n) {
+					th,
+					td {
+						background: $table-row-even-background;
+					}
+				}
+			}
+		}
+
+		@if ($table-inner-borders) {
+			tbody {
+				tr {
+					&:last-child {
+						th,
+						td {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+
+			td:not(:first-child) {
+				border-left: $table-border;
+			}
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Grid System
+// -----------------------------------------------------
+@mixin grid-system() {
+	.row {
+		width: 100%;
+		float: left;
+		clear: both;
+	}
+
+	%col-props {
+		margin-left: #{$grid-system-gutter / 2};
+		margin-right: #{$grid-system-gutter / 2};
+		float: left;
+	}
+
+	@for $i from 1 through $grid-system-columns {
+		.col#{$i} {
+			@extend %col-props;
+		}
+	}
+
+	@for $i from 1 through $grid-system-columns {
+		$col-width: (100% / $grid-system-columns) * $i;
+
+		.col#{$i} {
+			width: $col-width - $grid-system-gutter;
+
+			&.extend {
+				width: $col-width;
+			}
+		}
+
+		.push#{$i} {
+			margin-left: $col-width + $grid-system-gutter / 2;
+		}
+
+		.push#{$i}-half-reduced {
+			margin-left: $col-width;
+		}
+
+		.push#{$i}-reduced {
+			margin-left: $col-width - $grid-system-gutter / 2;
+		}
+	}
+
+	.nil-left {
+		margin-left: 0;
+	}
+
+	.nil-right {
+		margin-right: 0;
+	}
+
+	@if $grid-system-include-nesting {
+		.nested {
+			@for $i from 1 through $grid-system-columns {
+				&.col#{$i} {
+					$gutter-width-nested: $grid-system-gutter * ($grid-system-columns / $i);
+
+					%col-props-nested {
+						margin-left: #{$gutter-width-nested / 2};
+						margin-right: #{$gutter-width-nested / 2};
+					}
+
+					@for $j from 1 through $i {
+						$col-width-nested: ((100% / $i) * $j) - $gutter-width-nested + ($gutter-width-nested / $i) * $j;
+
+						.col#{$j} {
+							width: $col-width-nested;
+
+							@if $j != $i {
+								&.extend {
+									width: $col-width-nested + $gutter-width-nested;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			%col-props-nested-nil-margin-left {
+				margin-left: 0;
+			}
+
+			%col-props-nested-nil-margin-right {
+				margin-right: 0;
+			}
+
+			@for $i from 1 through $grid-system-columns {
+				.col#{$i} {
+					@extend %col-props-nested;
+
+					&:first-child,
+					&.nil-left {
+						@extend %col-props-nested-nil-margin-left;
+					}
+
+					&:last-child,
+					&.nil-right {
+						@extend %col-props-nested-nil-margin-right;
+					}
+				}
+
+				&.col#{$i} {
+					$gutter-width-nested: $grid-system-gutter * ($grid-system-columns / $i);
+
+					@for $j from 1 through $i {
+						$col-width-nested: ((100% / $i) * $j) - $gutter-width-nested + ($gutter-width-nested / $i) * $j;
+
+						@if $j != $i {
+							.push#{$j} {
+								margin-left: $col-width-nested + $gutter-width-nested;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: $page-breakpoint-fullwidth) {
+		$col-width-responsive: ((100% / $grid-system-columns) * $grid-system-columns) - $grid-system-gutter;
+
+		.row {
+			position: relative;
+			width: $grid-system-row-width-responsive;
+			margin: 0 auto;
+			float: none;
+		}
+
+		%col-props-reponsive {
+			width: $col-width-responsive;
+		}
+
+		%col-margin-left-responsive {
+			margin-left: $grid-system-gutter / 2;
+		}
+
+		@for $i from 1 through $grid-system-columns {
+			.col#{$i}, .col#{$i}.extend {
+				@extend %col-props-reponsive;
+			}
+
+			.push#{$i}, .push#{$i}-reduced, .push#{$i}-half-reduced {
+				@extend %col-margin-left-responsive;
+			}
+		}
+
+		.nil-left {
+			@extend %col-margin-left-responsive;
+		}
+
+		@if $grid-system-include-nesting {
+			%col-props-nested-reponsive {
+				width: 100%;
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			@for $i from 1 through $grid-system-columns {
+				@for $j from 1 through $grid-system-columns {
+					.nested.col#{$i} .col#{$j}, .nested.col#{$i} .col#{$j}.extend {
+						@extend %col-props-nested-reponsive;
+					}
+				}
+			}
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Sticky Footer
+// -----------------------------------------------------
+@mixin sticky-footer() {
+	.footer-dock {
+		height: $footer-dock-height;
+		clear: both;
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 0;
+		height: $footer-height;
+
+		@if $footer-fullwidth {
+			width: 100%;
+		} @else {
+			width: $page-middle-width;
+			left: 50%;
+			margin-left: -($page-middle-width / 2);
+		}
+	}
+
+	@media only screen and (max-width: $page-breakpoint-fullwidth) {
+		.footer-dock {
+			display: none;
+		}
+
+		.footer {
+			position: relative;
+			height: auto;
+			margin-top: $footer-dock-height - $footer-height;
+		}
+	}
+}
+
+// -----------------------------------------------------
+// Media Queries
+// -----------------------------------------------------
+@mixin media-queries() {
+	@media only screen and (max-width: #{$page-middle-width + 20}) {
+		img {
+			@if $images-enable-responsive-upscaling {
+				width: 100%;
+			} @else {
+				max-width: 100%;
+			}
+
+			height: auto;
+		}
+
+		.middle {
+			width: 100%;
+		}
+	}
+}
+
+// =====================================================
+// CoreSheet
+// =====================================================
+
+/*
+ * ----------------------------------------------------- Common Elements
+ */
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: $page-font;
+	background: $page-background-color;
+	color: $page-font-color;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+
+video,
+audio {
+	max-width: 100%;
+}
+
+p {
+	margin: $paragraph-margin;
+}
+
+a {
+	text-decoration: none;
+	background-color: transparent;
+	color: $links-text-color;
+
+	&:active,
+	&:focus,
+	&:hover {
+		outline: 0;
+	}
+
+	&:not(.button) {
+		@include vendor(transition, $links-transition);
+
+		&:active {
+			color: $links-text-color;
+		}
+
+		&:hover {
+			color: $links-text-color-hover;
+		}
+	}
+}
+
+hr {
+	width: 100%;
+	height: 0;
+	margin: $horizontal-ruler-margin;
+	border-width: $horizontal-ruler-height 0 0 0;
+	border-color: $horizontal-ruler-color;
+	border-style: $horizontal-ruler-style;
+	border-image: none;
+	clear: both;
+
+	&.float {
+		float: left;
+	}
+}
+
+code,
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/*
+ * ----------------------------------------------------- Page Layout Elements
+ */
+.page {
+	position: relative;
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;
+}
+
+.middle, {
+	width: #{$page-middle-width};
+	margin: 0 auto;
+}
+
+.middle,
+.row,
+.form-row,
+.navmenu {
+	&:before,
+	&:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/*
+ * ----------------------------------------------------- Page Brand Color Classes
+ */
+@include page-brand-color-classes();
+
+/*
+ * ----------------------------------------------------- Text Adjustment Classes
+ */
+@include text-adjustment-classes();
+
+/*
+ * ----------------------------------------------------- Headings
+ */
+@include headings();
+
+/*
+ * ----------------------------------------------------- Forms
+ */
+@include forms();
+
+/*
+ * ----------------------------------------------------- Navigation
+ */
+@include navigation-menus();
+
+/*
+ * ----------------------------------------------------- Buttons
+ */
+@include buttons();
+
+/*
+ * ----------------------------------------------------- Tables
+ */
+@include tables();
+
+/*
+ * ----------------------------------------------------- Grid System
+ */
+@include grid-system();
+
+/*
+ * ----------------------------------------------------- Sticky Footer
+ */
+@include sticky-footer();
+
+/*
+ * ----------------------------------------------------- Global Media Queries
+ */
+@include media-queries();
