@@ -1,0 +1,13 @@
+{
+  "name": "coresheet",
+  "version": "1.0.0",
+  "authors": [
+    "matthias-schuetz <MatthiasSchuetz@gmx.de>"
+  ],
+  "description": "Responsive Sass/CSS3 framework for desktop and mobile web projects",
+  "main": [
+    "./gulpfile.js"
+  ],
+  "ignore": [],
+  "license": "MIT"
+}
