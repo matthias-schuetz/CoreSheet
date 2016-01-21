@@ -26,7 +26,7 @@ $ npm insall coresheet
 For Bower use:
 
 ```html
-$ bower insall coresheet
+$ bower install coresheet
 ```
 
 If you want to quickly start developing you can just pick the compiled *coresheet.css* or *coresheet.min.css* inside the *dist* directory. They include the CoreSheet default theme and a 12 column grid. In order to customize the framework or use another theme, you'll need to compile the Sass files. See below how to accomplish this.
