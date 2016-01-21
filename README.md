@@ -17,10 +17,16 @@ You can view the various HTML/CSS components and the grid system [on the website
 
 ## Usage
 
-To install CoreSheet you can download this respository or use NPM. If you choose NPM, just open the command prompt and install the package via this command.
+To install CoreSheet you can download this respository or use NPM or Bower. If you choose NPM, just open the command prompt and install the package via this command.
 
 ```html
 $ npm insall coresheet
+```
+
+For Bower use:
+
+```html
+$ bower insall coresheet
 ```
 
 If you want to quickly start developing you can just pick the compiled *coresheet.css* or *coresheet.min.css* inside the *dist* directory. They include the CoreSheet default theme and a 12 column grid. In order to customize the framework or use another theme, you'll need to compile the Sass files. See below how to accomplish this.
