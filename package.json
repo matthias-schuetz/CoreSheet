@@ -1,6 +1,6 @@
 {
   "name": "coresheet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Responsive Sass/CSS3 framework including a grid system",
   "dependencies": {
     "gulp-insert": "^0.5.0",
