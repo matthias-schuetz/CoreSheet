@@ -20,7 +20,7 @@ You can view the various HTML/CSS components and the grid system [on the website
 To install CoreSheet you can download this respository or use NPM or Bower. If you choose NPM, just open the command prompt and install the package via this command.
 
 ```html
-$ npm insall coresheet
+$ npm install coresheet
 ```
 
 For Bower use:
