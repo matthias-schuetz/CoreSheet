@@ -144,7 +144,7 @@
 						<h2>Regular</h2>
 					</div>
 					<div class="col4">
-						<p><strong class="clr-zeta">&mdash;</strong> Forms are built up using common <code>input</code> elements. Radio options and checkboxes are fully customizable via CSS. Also the color of the placeholder texts inside the <code>input</code> fields has been normalized so it looks equal in all major browsers. The appearance of all form elements can be adjusted in the respective <strong>CoreSheet</strong> theme Sass file.</p>
+						<p><strong class="clr-zeta">&mdash;</strong> Forms are built up using common <code>input</code> elements. Radio options and checkboxes are fully customizable via CSS. Also the color of the placeholder texts inside the <code>input</code> fields has been normalized so it looks equal in all major browsers. There is also also a CSS class for additional form information, like displaying validation errors or password strength hints. The appearance of all form elements can be adjusted in the respective <strong>CoreSheet</strong> theme Sass file.</p>
 					</div>
 					<div class="col8">
 						<form>
@@ -159,6 +159,9 @@
 							<div class="form-row">
 								<label for="demo-input3">Password</label>
 								<input id="demo-input3" type="password" placeholder="Password" />
+								<div class="row retain form-info bgd-alpha clr-epsilon">
+									<span>This is an additional info text</span>
+								</div>
 							</div>
 							<div class="form-row">
 								<label>Options</label>

@@ -1,5 +1,5 @@
 /*
- * CoreSheet v1.0.5
+ * CoreSheet v1.0.6
  * A responsive Sass/CSS3 framework including a percentage-based grid system
  * http://coresheet.net
  *
@@ -17,7 +17,7 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	font: normal normal 500 16px/1.45 Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font: normal normal 500 16px / 1.45 Arial, "Helvetica Neue", Helvetica, sans-serif;
 	background: #ffffff;
 	color: #222222;
 }
@@ -245,6 +245,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-row {
 	margin-bottom: 12px;
+}
+
+.form-info {
+	padding: 8px 12px;
+	border-radius: 3px;
+	box-sizing: border-box;
 }
 
 label {
@@ -1914,9 +1920,11 @@ table td:not(:first-child) {
 @media only screen and (max-width: 767px) {
 	.row {
 		position: relative;
-		width: 94%;
 		margin: 0 auto;
 		float: none;
+	}
+	.row:not(.retain) {
+		width: 94%;
 	}
 	.col1, .col1.extend, .col2, .col2.extend, .col3, .col3.extend, .col4, .col4.extend, .col5, .col5.extend, .col6, .col6.extend, .col7, .col7.extend, .col8, .col8.extend, .col9, .col9.extend, .col10, .col10.extend, .col11, .col11.extend, .col12, .col12.extend {
 		width: 96%;

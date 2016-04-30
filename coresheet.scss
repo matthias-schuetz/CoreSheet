@@ -1,5 +1,5 @@
 /*
- * CoreSheet v1.0.5
+ * CoreSheet v1.0.6
  * A responsive Sass/CSS3 framework including a percentage-based grid system
  * http://coresheet.net
  *
@@ -91,6 +91,12 @@
 
 	.form-row {
 		margin-bottom: $form-row-margin-bottom;
+	}
+	
+	.form-info {
+		padding: $input-text-padding;
+		border-radius: $input-text-border-radius;
+		box-sizing: border-box;
 	}
 
 	label {
@@ -507,6 +513,7 @@
 		display: inline-block;
 		vertical-align: top;
 		cursor: pointer;
+		outline: none;
 		box-sizing: border-box;
 		-webkit-appearance: none;
 
@@ -757,9 +764,12 @@
 
 		.row {
 			position: relative;
-			width: $grid-system-row-width-responsive;
 			margin: 0 auto;
 			float: none;
+			
+			&:not(.retain) {
+				width: $grid-system-row-width-responsive;
+			}
 		}
 
 		%col-props-reponsive {
