@@ -27,7 +27,7 @@ gulp.task('sass.min', function() {
 			insert.prepend('/*\n' +
 				' * CoreSheet v' + packageJson.version + '\n' +
 				' * A responsive Sass/CSS3 framework including a percentage-based grid system\n' +
-				' * http://coresheet.net/\n' +
+				' * https://github.com/matthias-schuetz/CoreSheet/\n' +
 				' *\n' +
 				' * Copyright (C) Matthias Schuetz\n' +
 				' * Free to use under the MIT license\n' +

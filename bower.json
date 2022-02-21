@@ -2,7 +2,7 @@
   "name": "coresheet",
   "version": "1.0.6",
   "authors": [
-    "matthias-schuetz <MatthiasSchuetz@gmx.de>"
+    "matthias-schuetz <matthias@matthiasschuetz.com>"
   ],
   "description": "Responsive Sass/CSS3 framework for desktop and mobile web projects",
   "main": [
